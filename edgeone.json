@@ -11,6 +11,9 @@
     "framework": "openai-agents-sdk",
     "sandbox": {
       "timeout": 300
+    },
+    "mcp": {
+      "enabled": true
     }
   }
 }
