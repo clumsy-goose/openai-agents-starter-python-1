@@ -9,12 +9,12 @@ interface Props {
   disabled: boolean;
 }
 
-const PRESET_KEYS = ['preset.1', 'preset.2'] as const;
+const PRESET_KEYS: MessageKeys[] = ['preset.1', 'preset.2'];
 
 export default function ChatInput({ onSend, onStop, onClear, disabled }: Props) {
+  const { t } = useT();
   const [value, setValue] = useState('');
   const textareaRef = useRef<HTMLTextAreaElement>(null);
-  const { t } = useT();
 
   const handleSend = useCallback(() => {
     const trimmed = value.trim();
@@ -52,10 +52,10 @@ export default function ChatInput({ onSend, onStop, onClear, disabled }: Props) 
           <button
             key={key}
             className={styles.presetChip}
-            onClick={() => handlePreset(t(key as MessageKeys))}
+            onClick={() => handlePreset(t(key))}
             disabled={disabled}
           >
-            {t(key as MessageKeys)}
+            {t(key)}
           </button>
         ))}
       </div>

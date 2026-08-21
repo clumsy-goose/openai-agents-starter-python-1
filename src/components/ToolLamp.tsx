@@ -8,7 +8,7 @@ interface Props {
 export default function ToolLamp({ lamp }: Props) {
   return (
     <div className={`${styles.lamp} ${lamp.active ? styles.active : ''}`}>
-      {/* key=animKey re-mounts the span on each activation so the CSS animation replays from the start. */}
+      {/* key=animKey remounts span on each activation, ensuring CSS animation replays from start */}
       <span key={lamp.animKey} className={styles.icon}>{lamp.icon}</span>
       <span className={styles.label}>{lamp.label}</span>
     </div>

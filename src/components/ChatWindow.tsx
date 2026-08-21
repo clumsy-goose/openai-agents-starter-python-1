@@ -10,8 +10,8 @@ interface Props {
 }
 
 export default function ChatWindow({ messages, loading }: Props) {
-  const windowRef = useRef<HTMLDivElement>(null);
   const { t } = useT();
+  const windowRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (messages.length === 0 && !loading) return;
